@@ -10,7 +10,7 @@ schedule = SchoolSchedule(day, "https://herzogks.iscool.co.il")
 schedule.fetch_data()
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000", "teachertracker.netlify.app"])
+CORS(app, origins=["http://localhost:3000", "teacher-tracker.netlify.app"])
 
 @app.route("/teacher/<string:teacher_name>/<int:hour>",methods=["GET"])
 def get_room_for_teacher_and_hour(teacher_name:str, hour:int):
