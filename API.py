@@ -18,9 +18,3 @@ def get_room_for_teacher_and_hour(teacher_name:str, hour:int):
 def get_empty_rooms_for_hour(hour:int):
     return jsonify({"emptyRooms":schedule.get_empty_rooms_for_hour(hour)})
 
-
-
-
-
-
-app.run()
