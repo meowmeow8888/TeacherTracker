@@ -24,4 +24,4 @@ def get_empty_rooms_for_hour(hour:int):
 def get_teachers():
     return jsonify({"teachers":list(schedule.teacher_map.keys())})
 
-app.run()
+app.run(port=8080)
