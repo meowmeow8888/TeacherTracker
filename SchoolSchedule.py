@@ -33,7 +33,7 @@ class SchoolSchedule:
                 print("googy")
                 break
             print(self.school_url,res.status_code)
-            time.sleep(1)
+            time.sleep(3)
 
         soup = bs(res.content, "html.parser")
         classes = soup.find_all("option")
@@ -70,7 +70,7 @@ class SchoolSchedule:
                     print("goog")
                     break
                 print("notgoog")
-                time.sleep(1)
+                time.sleep(3)
             soup = bs(res.content, "html.parser")
             lesson_list = self.__parse_class_schedule(soup)
             for lesson in lesson_list:
@@ -88,7 +88,7 @@ class SchoolSchedule:
 
     def get_teacher_room_for_hour(self, teacher: Teacher, hour: int):
         if teacher.name not in self.teacher_map:
-            return 0
+            return None
         for lesson in self.teacher_map[teacher.name]:
             if lesson.hour == hour:
                 return lesson.room
