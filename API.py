@@ -16,5 +16,8 @@ def get_room_for_teacher_and_hour(teacher_name:str, hour:int):
 
 @app.route("/empty-rooms/<int:hour>",methods=["GET"])
 def get_empty_rooms_for_hour(hour:int):
-    return jsonify({"emptyRooms":schedule.get_empty_rooms_for_hour(hour)})
+    return jsonify({"empty-rooms":schedule.get_empty_rooms_for_hour(hour)})
 
+@app.route("/teachers",methods=["GET"])
+def get_teachers():
+    return jsonify({"teachers":schedule.teacher_map.keys()})
